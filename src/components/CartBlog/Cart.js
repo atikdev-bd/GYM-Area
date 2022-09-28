@@ -24,13 +24,13 @@ const Cart = () => {
   };
   function breakTime(value){
     setTime2(value)
-
-
+    
+   
   }
 
   return (
     <div className="blog-area bg-slate-300">
-      <div className="cart-section">
+      <div className="cart-section grid lg:grid-cols-3 md:grid-cols-2 gap-6">
         {carts.map((gymInfo) => (
           <SingleCart
             key={gymInfo.id}
