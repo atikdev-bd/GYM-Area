@@ -1,10 +1,12 @@
-.cart-summary {
-  font-family: "Times New Roman", Times, serif;
-}
+
 .blog-area {
+    
   display: grid;
   grid-template-columns: 4fr 1fr;
 }
+.cart-summary {
+    font-family: "Times New Roman", Times, serif;
+  }
 .cart-section {
   margin-top: 120px !important;
   display: grid;

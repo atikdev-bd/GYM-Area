@@ -4,6 +4,10 @@ import SingleCart from "./gymInfo/SingleCart";
 
 const Cart = () => {
   const [carts, setCarts] = useState([]);
+  const [time, setTime] = useState(0);
+  const [time2, setTime2] = useState(0);
+
+
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
@@ -13,11 +17,26 @@ const Cart = () => {
       });
   }, []);
 
+  const addToCart = (info) => {
+   const newTime = time + parseInt(info.time)
+   setTime(newTime)
+    
+  };
+  function breakTime(value){
+    setTime2(value)
+
+
+  }
+
   return (
     <div className="blog-area bg-slate-300">
       <div className="cart-section">
         {carts.map((gymInfo) => (
-          <SingleCart key={gymInfo.id} info={gymInfo}></SingleCart>
+          <SingleCart
+            key={gymInfo.id}
+            info={gymInfo}
+            addToCart={addToCart}
+          ></SingleCart>
         ))}
       </div>
       <div className="cart-summary bg-slate-400">
@@ -43,19 +62,19 @@ const Cart = () => {
         <h1 className="ml-6 mt-8 text-xl">Add a break</h1>
         <div className="shadow-lg mx-6 mt-6 py-2 bg-slate-300 rounded-lg text-center">
           <div className="time">
-            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+            <button onClick={()=>breakTime(10)} className="rounded-full bg-slate-100 active:bg-green-400 p-1">
               10s
             </button>
-            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+            <button onClick={()=>breakTime(20)} className="rounded-full bg-slate-100 active:bg-green-400 p-1">
               20s
             </button>
-            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+            <button onClick={()=>breakTime(30)} className="rounded-full bg-slate-100 active:bg-green-400 p-1">
               30s
             </button>
-            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+            <button onClick={()=>breakTime(40)} className="rounded-full bg-slate-100 active:bg-green-400 p-1">
               40s
             </button>
-            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+            <button onClick={()=>breakTime(50)} className="rounded-full bg-slate-100 active:bg-green-400 p-1">
               50s
             </button>
           </div>
@@ -64,11 +83,11 @@ const Cart = () => {
         <div>
           <div className="flex justify-between px-8 shadow-lg mx-6 mt-6 py-4 bg-slate-300 rounded-lg">
             <p>Exercise time</p>
-            <p className="text-gray-500">0 second</p>
+            <p className="text-gray-500">{time} second</p>
           </div>
           <div className="flex justify-between px-8 shadow-lg mx-6 mt-6 py-4 bg-slate-300 rounded-lg">
             <p>Break time</p>
-            <p className="text-gray-500">0 second</p>
+            <p className="text-gray-500">{time2} second</p>
           </div>
           <div className=" hover:bg-green-400 rounded px-6 shadow-lg mx-6 mt-6 py-2 bg-orange-200 text-center">
             <button>Activity Completed</button>
