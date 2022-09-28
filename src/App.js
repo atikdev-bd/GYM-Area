@@ -1,7 +1,8 @@
 
-import './App.css';
-import Cart from './components/CartBlog/Cart';
-import Title from './header/Title';
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+import "./App.css";
+import Cart from "./components/CartBlog/Cart";
 
 function App() {
   return (
