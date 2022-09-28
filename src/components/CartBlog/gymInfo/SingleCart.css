@@ -1,6 +1,13 @@
-
+.single-cart{
+    border: 2px ;
+    height: 350px;
+    box-shadow: 4px 4px 8px gray;
+}
 .cart-info img{
     width: 300px;
-    height: 200px;
+    height: 180px;
 
+}
+.btn{
+    width: 75%;
 }
