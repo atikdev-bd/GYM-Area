@@ -1,32 +1,82 @@
-import React, { useEffect, useState } from 'react';
-import Title from '../../header/Title';
-import "./Cart.css"
-import SingleCart from './gymInfo/SingleCart';
+import React, { useEffect, useState } from "react";
+import "./Cart.css";
+import SingleCart from "./gymInfo/SingleCart";
 
 const Cart = () => {
-    const [carts, setCarts] = useState([])
-    useEffect(()=>{
-        fetch('data.json')
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-            setCarts(data)
-        })
-    },[])
+  const [carts, setCarts] = useState([]);
+  useEffect(() => {
+    fetch("data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setCarts(data);
+      });
+  }, []);
 
-    return (
-        <div className='blog-area bg-slate-300'>
-           <div className="cart-section">
-           
-           {
-               carts.map(gymInfo =><SingleCart key={gymInfo.id} info = {gymInfo}></SingleCart>) 
-            }
-           </div>
-           <div className="cart-summary bg-orange-200">
-            <h1> this is summary here</h1>
-           </div>
+  return (
+    <div className="blog-area bg-slate-300">
+      <div className="cart-section">
+        {carts.map((gymInfo) => (
+          <SingleCart key={gymInfo.id} info={gymInfo}></SingleCart>
+        ))}
+      </div>
+      <div className="cart-summary bg-slate-400">
+        <img src="../../../public/images/lat pulldown.jpg" alt="" />
+        <div className="my-info shadow-lg bg-slate-300 rounded-lg text-center">
+          <div>
+            <p>
+              70 <span>kg</span>
+            </p>
+            <p>Weight</p>
+          </div>
+          <div>
+            <p>5.9</p>
+            <p>Height</p>
+          </div>
+          <div>
+            <p>
+              24<span>yrs</span>
+            </p>
+            <p>Age</p>
+          </div>
         </div>
-    );
+        <h1 className="ml-6 mt-8 text-xl">Add a break</h1>
+        <div className="shadow-lg mx-6 mt-6 py-2 bg-slate-300 rounded-lg text-center">
+          <div className="time">
+            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+              10s
+            </button>
+            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+              20s
+            </button>
+            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+              30s
+            </button>
+            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+              40s
+            </button>
+            <button className="rounded-full bg-slate-100 active:bg-green-400 p-1">
+              50s
+            </button>
+          </div>
+        </div>
+        <h1 className="ml-6 mt-8 text-xl">Exercise Details</h1>
+        <div>
+          <div className="flex justify-between px-8 shadow-lg mx-6 mt-6 py-4 bg-slate-300 rounded-lg">
+            <p>Exercise time</p>
+            <p className="text-gray-500">0 second</p>
+          </div>
+          <div className="flex justify-between px-8 shadow-lg mx-6 mt-6 py-4 bg-slate-300 rounded-lg">
+            <p>Break time</p>
+            <p className="text-gray-500">0 second</p>
+          </div>
+          <div className=" hover:bg-green-400 rounded px-6 shadow-lg mx-6 mt-6 py-2 bg-orange-200 text-center">
+            <button>Activity Completed</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Cart;

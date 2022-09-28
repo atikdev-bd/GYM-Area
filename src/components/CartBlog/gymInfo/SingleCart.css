@@ -1,4 +1,5 @@
 .single-cart{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 2px ;
     height: 350px;
     box-shadow: 4px 4px 8px gray;
@@ -9,5 +10,5 @@
 
 }
 .btn{
-    width: 75%;
+    width: 80%;
 }
