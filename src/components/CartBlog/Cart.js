@@ -42,7 +42,7 @@ const Cart = () => {
          
         ))}
       </div>
-      <div className="cart-summary bg-slate-400">
+      <div className="cart-summary bg-slate-400 text-slate-800">
         <img src="../../../public/images/lat pulldown.jpg" alt="" />
         <div className="my-info shadow-lg bg-slate-300 rounded-lg text-center">
           <div>
@@ -62,7 +62,7 @@ const Cart = () => {
             <p>Age</p>
           </div>
         </div>
-        <h1 className="ml-6 mt-8 text-xl">Add a break</h1>
+        <h1 className="ml-6 mt-8 text-xl text-slate-800">Add a break</h1>
         <div className="shadow-lg mx-6 mt-6 py-2 bg-slate-300 rounded-lg text-center">
           <div className="time">
             <button

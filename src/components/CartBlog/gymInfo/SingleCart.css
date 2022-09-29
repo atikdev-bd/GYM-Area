@@ -2,7 +2,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 2px ;
     height: 350px;
-    box-shadow: 4px 4px 8px gray;
+    box-shadow: 4px 4px 8px rgb(1, 0, 0);
 }
 .cart-info img{
     width: 300px;

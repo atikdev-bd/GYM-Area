@@ -3,7 +3,7 @@ import "./Question.css";
 
 const Question = () => {
   return (
-    <div className="mt-20 mx-12 rounded-t-sm  text-gray-900 font-semibold  bg-slate-400">
+    <div className="question-blog mt-20 mx-12 rounded-t-sm text-gray-900 font-semibold  bg-slate-400">
       <div className="question px-8 py-4">
         <h1>Question 1 : How does react work ?</h1>
         <p>

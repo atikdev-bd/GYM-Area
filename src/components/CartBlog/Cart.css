@@ -4,10 +4,10 @@
   grid-template-columns: 4fr 1fr;
 }
 .cart-summary {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   height: 856px;
   border-bottom: 0;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 .cart-section {
   margin-top: 120px !important;
