@@ -31,7 +31,8 @@ const Cart = () => {
   }
   return (
     <div className="blog-area bg-slate-300">
-      <div className="cart-section grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+    
+      <div className="cart-section grid lg:grid-cols-3 md:grid-cols-2 gap-8">
         {carts.map((gymInfo) => (
           <SingleCart
             key={gymInfo.id}
