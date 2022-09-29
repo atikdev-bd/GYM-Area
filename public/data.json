@@ -7,19 +7,19 @@
       },
     {
         "id":"2",
-        "img": "./images/jump box.jpg",
+        "img": "./images/jumpbox.jpg",
         "time": "40",
         "name": "Jumping box"
       },
     {
         "id":"3",
-        "img": "./images/lat pulldown.jpg",
+        "img": "./images/latpulldown.jpg",
         "time": "50",
         "name": "Let pulldown"
       },
     {
         "id":"4",
-        "img": "./images/pull up.jpg",
+        "img": "./images/pullup.jpg",
         "time": "60",
         "name": "Pull up"
       },
@@ -31,7 +31,7 @@
       },
     {
         "id":"6",
-        "img": "./images/split stance.jpg",
+        "img": "./images/splitstance.jpg",
         "time": "55",
         "name": "Split stance"
       }

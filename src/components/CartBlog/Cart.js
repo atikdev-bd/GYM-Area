@@ -2,20 +2,23 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "./Cart.css";
 import SingleCart from "./gymInfo/SingleCart";
+import userImage from "./../../photo/Atikurrahman-removebg-preview.png";
 
 const Cart = () => {
   const [carts, setCarts] = useState([]);
   const [time, setTime] = useState(0);
-  const [time2, setTime2] = useState([]);
+  const [time2, setTime2] = useState(localStorage.getItem("time") || []);
 
 
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setCarts(data);
       });
   }, []);
+
 
   const addToCart = (info) => {
     const newTime = time + parseInt(info.time);
@@ -23,7 +26,7 @@ const Cart = () => {
   };
   function breakTime(value) {
     localStorage.setItem("time", JSON.stringify(value));
-    const local = localStorage.getItem("time");
+    const local = JSON.parse(localStorage.getItem("time"));
     setTime2(parseInt(local));
   }
 
@@ -42,7 +45,15 @@ const Cart = () => {
         ))}
       </div>
       <div className="cart-summary bg-slate-400 text-slate-800">
-        <img src="../../../public/images/lat pulldown.jpg" alt="" />
+        <div className="justify-evenly  ">
+          <div>
+            <img className="w-44  rounded-br-full  bg-slate-300 shadow-lg" src={userImage} alt="userImage" />
+            </div>
+          <div className=" ">
+            <h1 className=" text-black bg-white rounded">Md Atikur Rahman</h1>
+            <h2 className="text-sm">Rajshahi, Bangladesh</h2>
+          </div>
+        </div>
         <div className="my-info shadow-lg bg-slate-300 rounded-lg text-center">
           <div>
             <p>
@@ -62,8 +73,8 @@ const Cart = () => {
           </div>
         </div>
         <h1 className="ml-7 mt-12 text-xl text-slate-800">Add a break</h1>
-        <div className="shadow-lg mx-6 mt-2 py-2 bg-slate-300 rounded-lg text-center">
-          <div className="time">
+        <div className="shadow-lg mx-6 mt-2 py-2 pr-6 md:pr-8 lg:pr-6 bg-slate-300 rounded-lg text-center">
+          <div className="time px-4 lg:px-0 md:px-0">
             <button
               onClick={() => breakTime(10)}
               className="rounded-full bg-slate-100 active:bg-green-400 p-1"
