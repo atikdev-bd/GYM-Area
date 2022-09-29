@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "./Cart.css";
 import SingleCart from "./gymInfo/SingleCart";
 import userImage from "./../../photo/Atikurrahman-removebg-preview.png";
+import icon from "./../../photo/location.svg"
 
 const Cart = () => {
   const [carts, setCarts] = useState([]);
@@ -52,8 +53,11 @@ const Cart = () => {
             <img className="w-44  rounded-br-full  bg-slate-300 shadow-lg" src={userImage} alt="userImage" />
             </div>
           <div className=" ">
-            <h1 className=" text-black bg-zinc-400 shadow-lg p-2 ">Md Atikur Rahman</h1>
-            <h2 className="text-sm">Rajshahi, Bangladesh</h2>
+            <h1 className=" text-black bg-zinc-400 shadow-lg p-2 ">Md. Atikur Rahman</h1>
+          <div className="flex mt-2">
+          <img className="w-8" src={icon} alt="homeIcon" />
+            <h2 className="text-sm mt-2">Rajshahi, Bangladesh</h2>
+          </div>
           </div>
         </div>
         <div className="my-info shadow-lg bg-slate-300 rounded-lg text-center">
@@ -74,6 +78,8 @@ const Cart = () => {
             <p>Age</p>
           </div>
         </div>
+        <br />
+        <hr />
         <h1 className="ml-7 mt-12 text-xl text-slate-800">Add a break</h1>
         <div className="shadow-lg mx-6 mt-2 py-2 pr-6 md:pr-8 lg:pr-6 bg-slate-300 rounded-lg text-center">
           <div className="time px-4 lg:px-0 md:px-0">
