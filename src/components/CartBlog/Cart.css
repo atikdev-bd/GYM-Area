@@ -5,9 +5,13 @@
 }
 .cart-summary {
   font-family: "Times New Roman", Times, serif;
+  height: 856px;
+  border-bottom: 0;
+  border-radius: 4px;
 }
 .cart-section {
   margin-top: 120px !important;
+  margin-bottom: 60px !important;
   margin: auto;
 }
 .my-info {

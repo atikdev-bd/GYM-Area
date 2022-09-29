@@ -18,6 +18,7 @@ const SingleCart = (props) => {
         </div>
       </div>
     </div>
+    
   );
 };
 

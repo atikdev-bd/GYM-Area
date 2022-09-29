@@ -39,6 +39,7 @@ const Cart = () => {
             info={gymInfo}
             addToCart={addToCart}
           ></SingleCart>
+         
         ))}
       </div>
       <div className="cart-summary bg-slate-400">
