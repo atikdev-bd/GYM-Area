@@ -2,7 +2,7 @@ import React from "react";
 import "./SingleCart.css";
 
 const SingleCart = (props) => {
-  const { img, name, id, time } = props.info;
+  const { img, name, time } = props.info;
   return (
     <div className="single-cart rounded-md  bg-slate-400">
       <div className="cart-info">

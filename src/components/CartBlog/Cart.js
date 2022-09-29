@@ -7,6 +7,7 @@ import userImage from "./../../photo/Atikurrahman-removebg-preview.png";
 const Cart = () => {
   const [carts, setCarts] = useState([]);
   const [time, setTime] = useState(0);
+  ///****/ local storage State /****///
   const [time2, setTime2] = useState(localStorage.getItem("time") || []);
 
 
@@ -23,15 +24,17 @@ const Cart = () => {
     const newTime = time + parseInt(info.time);
     setTime(newTime);
   };
+  // set local storage data //
   function breakTime(value) {
     localStorage.setItem("time", JSON.stringify(value));
     const local = JSON.parse(localStorage.getItem("time"));
     setTime2(parseInt(local));
   }
-
+// toast here //
   function diffToast() {
     toast("Activity Completed!");
   }
+  //toast end //
   return (
     <div className="blog-area bg-slate-300">
       <div className="cart-section grid lg:grid-cols-3 md:grid-cols-2 gap-8">
