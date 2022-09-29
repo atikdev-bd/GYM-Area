@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import "./Cart.css";
 import SingleCart from "./gymInfo/SingleCart";
 
 const Cart = () => {
   const [carts, setCarts] = useState([]);
   const [time, setTime] = useState(0);
-  const [time2, setTime2] = useState(0);
+  const [time2, setTime2] = useState([]);
+
 
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCarts(data);
       });
   }, []);
@@ -22,16 +22,16 @@ const Cart = () => {
     setTime(newTime);
   };
   function breakTime(value) {
-    setTime2(value);
+    localStorage.setItem("time", JSON.stringify(value));
+    const local = localStorage.getItem("time");
+    setTime2(parseInt(local));
   }
 
-  function diffToast (){
-    toast("Activity Completed!")
-
+  function diffToast() {
+    toast("Activity Completed!");
   }
   return (
     <div className="blog-area bg-slate-300">
-    
       <div className="cart-section grid lg:grid-cols-3 md:grid-cols-2 gap-8">
         {carts.map((gymInfo) => (
           <SingleCart
@@ -39,7 +39,6 @@ const Cart = () => {
             info={gymInfo}
             addToCart={addToCart}
           ></SingleCart>
-         
         ))}
       </div>
       <div className="cart-summary bg-slate-400 text-slate-800">
@@ -62,8 +61,8 @@ const Cart = () => {
             <p>Age</p>
           </div>
         </div>
-        <h1 className="ml-6 mt-8 text-xl text-slate-800">Add a break</h1>
-        <div className="shadow-lg mx-6 mt-6 py-2 bg-slate-300 rounded-lg text-center">
+        <h1 className="ml-7 mt-12 text-xl text-slate-800">Add a break</h1>
+        <div className="shadow-lg mx-6 mt-2 py-2 bg-slate-300 rounded-lg text-center">
           <div className="time">
             <button
               onClick={() => breakTime(10)}
@@ -97,9 +96,9 @@ const Cart = () => {
             </button>
           </div>
         </div>
-        <h1 className="ml-6 mt-8 text-xl">Exercise Details</h1>
+        <h1 className="ml-7 mt-12 text-xl">Exercise Details</h1>
         <div>
-          <div className="flex justify-between px-8 shadow-lg mx-6 mt-6 py-4 bg-slate-300 rounded-lg">
+          <div className="flex justify-between px-8 shadow-lg mx-6 mt-2 py-4 bg-slate-300 rounded-lg">
             <p>Exercise time</p>
             <p className="text-gray-500">{time} second</p>
           </div>
@@ -108,14 +107,12 @@ const Cart = () => {
             <p className="text-gray-500">{time2} second</p>
           </div>
           <div className=" hover:bg-green-400 rounded px-6 shadow-lg mx-6 mt-6 py-2 bg-orange-200 text-center">
-            <button onClick={()=>diffToast()}>Activity Completed</button>
+            <button onClick={() => diffToast()}>Activity Completed</button>
             <ToastContainer></ToastContainer>
           </div>
         </div>
       </div>
-    
     </div>
-
   );
 };
 
