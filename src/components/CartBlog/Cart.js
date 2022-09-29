@@ -14,7 +14,6 @@ const Cart = () => {
     fetch("data.json")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCarts(data);
       });
   }, []);
@@ -50,7 +49,7 @@ const Cart = () => {
             <img className="w-44  rounded-br-full  bg-slate-300 shadow-lg" src={userImage} alt="userImage" />
             </div>
           <div className=" ">
-            <h1 className=" text-black bg-white rounded">Md Atikur Rahman</h1>
+            <h1 className=" text-black bg-zinc-400 shadow-lg p-2 ">Md Atikur Rahman</h1>
             <h2 className="text-sm">Rajshahi, Bangladesh</h2>
           </div>
         </div>
