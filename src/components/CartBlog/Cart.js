@@ -3,7 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "./Cart.css";
 import SingleCart from "./gymInfo/SingleCart";
 import userImage from "./../../photo/Atikurrahman-removebg-preview.png";
-import icon from "./../../photo/location.svg"
+import locationIcon from "./../../photo/location.svg"
 
 const Cart = () => {
   const [carts, setCarts] = useState([]);
@@ -47,20 +47,20 @@ const Cart = () => {
           ></SingleCart>
         ))}
       </div>
-      <div className="cart-summary bg-slate-400 text-slate-800">
+      <div className="cart-summary w-[260px] md:w-[284px] lg:w-[300px] ml-4 md:ml-2 lg:ml-0 bg-slate-400 text-slate-800">
         <div className="justify-evenly  ">
           <div>
             <img className="w-44  rounded-br-full  bg-slate-300 shadow-lg" src={userImage} alt="userImage" />
             </div>
           <div className=" ">
-            <h1 className=" text-black bg-zinc-400 shadow-lg p-2 ">Md. Atikur Rahman</h1>
+            <h1 className=" text-black hover:bg-slate-300 bg-zinc-400 shadow-lg p-2 ">Md. Atikur Rahman</h1>
           <div className="flex mt-2">
-          <img className="w-8" src={icon} alt="homeIcon" />
-            <h2 className="text-sm mt-2">Rajshahi, Bangladesh</h2>
+          <img className="w-8" src={locationIcon} alt="homeIcon" />
+            <h2 className="text-sm mt-2 hover:text-violet-800"> Naogaon,Rajshahi, Bangladesh</h2>
           </div>
           </div>
         </div>
-        <div className="my-info shadow-lg bg-slate-300 rounded-lg text-center">
+        <div className="my-info hover:bg-zinc-400 shadow-lg bg-slate-300 rounded-lg text-center">
           <div>
             <p>
               70 <span>kg</span>
@@ -81,7 +81,7 @@ const Cart = () => {
         <br />
         <hr />
         <h1 className="ml-7 mt-12 text-xl text-slate-800">Add a break</h1>
-        <div className="shadow-lg mx-6 mt-2 py-2 pr-6 md:pr-8 lg:pr-6 bg-slate-300 rounded-lg text-center">
+        <div className="shadow-lg mx-6 mt-2 py-2 pr-60 md:pr-8 lg:pr-6 bg-slate-300 rounded-lg text-center">
           <div className="time px-4 lg:px-0 md:px-0">
             <button
               onClick={() => breakTime(10)}

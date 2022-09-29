@@ -11,7 +11,7 @@ const SingleCart = (props) => {
         <p className="px-4 mb-2 text-slate-800">{name}</p>
         <p className="px-4 text-slate-800 "> Time required : {time} second</p>
         </div>
-        <div className="text-center mt-12">
+        <div className="text-center mt-4 md:mt-10 lg:mt-12">
           <button onClick={()=>props.addToCart(props.info)} className="btn   text-slate-900 px-4 py-2 bg-slate-300 hover:bg-slate-500 rounded">
             Add to list
           </button>
